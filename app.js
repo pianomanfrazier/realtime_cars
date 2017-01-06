@@ -12,9 +12,7 @@ var app = express();
 var http = require('http').Server(app);
 app.io = require('socket.io')(http);
 
-app.io.on('connection', function(socket){
-	console.log('a user connected');
-})
+require('./io/myio')(app); // handles io events
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
