@@ -2,13 +2,21 @@ extends layout
 
 block content
   .container
-    .jumbotron
-      h1= title
-      p Welcome to #{title}
-    img(src="img/scaled/green_car.png", width="250")
-    br
-    img(src="img/scaled/tur_car.png", width="250")
-    br
-    img(src="img/scaled/yellow_car.png", width="250")
-    br
-    img(src="img/scaled/red_car.png", width="250")
+    .jumbotron.text-center
+      h1
+        i.fa.fa-flag-checkered
+        | &nbsp; #{title} &nbsp;
+        i.fa.fa-flag-checkered
+    #status.alert.alert-info
+    #player1
+      img(src="img/green_car.png", width="250")
+    #player2
+      img(src="img/tur_car.png", width="250")
+    #player3
+      img(src="img/yellow_car.png", width="250")
+    #player4
+      img(src="img/red_car.png", width="250")
+
+block scripts
+    script(src="/socket.io/socket.io.js")
+    script(src="javascripts/client_io.js")
